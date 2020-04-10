@@ -9,4 +9,13 @@
    .col-4 {
       padding: 10px;
    }
+
+   .no-result {
+      margin-top: 0;
+      .alert {
+         width: 200px;
+         margin: 0 auto;
+         text-align: center;
+      }
+   }
 }

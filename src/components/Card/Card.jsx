@@ -93,7 +93,6 @@ Card.propTypes = {
       login: PropTypes.string.isRequired,
       avatar_url: PropTypes.string.isRequired,
       score: PropTypes.number.isRequired,
-      created_at: PropTypes.string.isRequired,
    }),
 };
 

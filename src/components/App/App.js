@@ -13,6 +13,7 @@ class App extends Component {
          users: [],
          enableBtn: false,
          page: 1,
+         noResultState: false,
       };
    }
 
@@ -35,7 +36,7 @@ class App extends Component {
       if (value !== '') {
          const promises = [apiAgent.users.getAll({ query: value, page })];
          Promise.all(promises).then(([userData]) => {
-            this.setState({ users: userData.items, enableBtn: userData.items.length === 12 });
+            this.setState({ users: userData.items, enableBtn: userData.items.length === 12, noResultState: true });
          });
       } else {
          this.setState({ page: 1 });
@@ -56,7 +57,7 @@ class App extends Component {
    };
 
    render() {
-      const { users, enableBtn } = this.state;
+      const { users, enableBtn, noResultState, query } = this.state;
       const LoadMoreBtn = () => {
          return (
             <p className='text-center'>
@@ -77,14 +78,25 @@ class App extends Component {
                   </div>
                </div>
                <div className='row'>
-                  {users.map((user) => (
-                     <div className='col-4' key={user.id}>
-                        <div className='user'>
-                           <Card data={user} />
+                  {users.length > 0 &&
+                     users.map((user) => (
+                        <div className='col-4' key={user.id}>
+                           <div className='user'>
+                              <Card data={user} />
+                           </div>
+                        </div>
+                     ))}
+               </div>
+
+               {users.length === 0 && noResultState && query !== '' && (
+                  <div className='row no-result'>
+                     <div className='col-12'>
+                        <div className=' alert alert-warning' role='alert'>
+                           No result found
                         </div>
                      </div>
-                  ))}
-               </div>
+                  </div>
+               )}
 
                <div className='row'>
                   <div className='col-12'>{enableBtn && <LoadMoreBtn />}</div>
