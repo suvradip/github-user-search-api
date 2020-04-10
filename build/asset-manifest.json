@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/github-users/build/static/css/main.0eb2e749.chunk.css",
-    "main.js": "/github-users/build/static/js/main.c4153690.chunk.js",
-    "main.js.map": "/github-users/build/static/js/main.c4153690.chunk.js.map",
-    "runtime-main.js": "/github-users/build/static/js/runtime-main.216f87b9.js",
-    "runtime-main.js.map": "/github-users/build/static/js/runtime-main.216f87b9.js.map",
-    "static/js/2.37a8d2b1.chunk.js": "/github-users/build/static/js/2.37a8d2b1.chunk.js",
-    "static/js/2.37a8d2b1.chunk.js.map": "/github-users/build/static/js/2.37a8d2b1.chunk.js.map",
-    "index.html": "/github-users/build/index.html",
-    "precache-manifest.16103d8b7a0c5751d2f887b8da676266.js": "/github-users/build/precache-manifest.16103d8b7a0c5751d2f887b8da676266.js",
-    "service-worker.js": "/github-users/build/service-worker.js",
-    "static/css/main.0eb2e749.chunk.css.map": "/github-users/build/static/css/main.0eb2e749.chunk.css.map",
-    "static/js/2.37a8d2b1.chunk.js.LICENSE.txt": "/github-users/build/static/js/2.37a8d2b1.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/github-users/build/static/media/logo.9f905f2f.svg"
+    "main.css": "/github-user-search-api/build/static/css/main.0eb2e749.chunk.css",
+    "main.js": "/github-user-search-api/build/static/js/main.c4153690.chunk.js",
+    "main.js.map": "/github-user-search-api/build/static/js/main.c4153690.chunk.js.map",
+    "runtime-main.js": "/github-user-search-api/build/static/js/runtime-main.837ad4ae.js",
+    "runtime-main.js.map": "/github-user-search-api/build/static/js/runtime-main.837ad4ae.js.map",
+    "static/js/2.37a8d2b1.chunk.js": "/github-user-search-api/build/static/js/2.37a8d2b1.chunk.js",
+    "static/js/2.37a8d2b1.chunk.js.map": "/github-user-search-api/build/static/js/2.37a8d2b1.chunk.js.map",
+    "index.html": "/github-user-search-api/build/index.html",
+    "precache-manifest.bca35e7ac733dbc7705116e03650cee7.js": "/github-user-search-api/build/precache-manifest.bca35e7ac733dbc7705116e03650cee7.js",
+    "service-worker.js": "/github-user-search-api/build/service-worker.js",
+    "static/css/main.0eb2e749.chunk.css.map": "/github-user-search-api/build/static/css/main.0eb2e749.chunk.css.map",
+    "static/js/2.37a8d2b1.chunk.js.LICENSE.txt": "/github-user-search-api/build/static/js/2.37a8d2b1.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/github-user-search-api/build/static/media/logo.9f905f2f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.216f87b9.js",
+    "static/js/runtime-main.837ad4ae.js",
     "static/js/2.37a8d2b1.chunk.js",
     "static/css/main.0eb2e749.chunk.css",
     "static/js/main.c4153690.chunk.js"
