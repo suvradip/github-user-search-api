@@ -7,7 +7,7 @@ const SearchBar = ({ action }) => {
 
    const btnAction = (event) => {
       event.preventDefault();
-      action(value.split(' ').join(','));
+      action(value);
    };
 
    const handleChange = (event) => {

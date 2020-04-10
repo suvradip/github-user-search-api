@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import apiAgent from '../../util/api';
 import './Card.scss';
 
@@ -13,10 +13,16 @@ const Card = ({ data }) => {
    const handleClose = () => setShow(false);
    const handleShow = async () => {
       const promises = [apiAgent.users.get(login)];
-      await Promise.all(promises).then(([items]) => {
+      Promise.all(promises).then(([items]) => {
          setUserInfo(items);
+         setShow(true);
       });
-      setShow(true);
+   };
+
+   const getDateFormat = (param) => {
+      const d = new Date(param);
+      const [since] = d.toLocaleString().split(',');
+      return since;
    };
 
    return (
@@ -46,7 +52,15 @@ const Card = ({ data }) => {
                            </div>
                            <div className='p-info text-center'>
                               <h4 className='card-title'>{userInfo.name}</h4>
-                              <h6>@{userInfo.login}</h6>
+                              <div className='h6'>
+                                 <p>
+                                    @{userInfo.login}
+                                    {userInfo.site_admin && <span className='ml-1 badge badge-info'>Admin</span>}
+                                 </p>
+                                 <p>
+                                    <span>Since {getDateFormat(userInfo.created_at)}</span>
+                                 </p>
+                              </div>
                            </div>
                            <div className='github-info'>
                               <button type='button' className='btn btn-sm btn-outline-dark'>
@@ -65,9 +79,9 @@ const Card = ({ data }) => {
                </div>
             </Modal.Body>
             <Modal.Footer bsPrefix='modal-footer'>
-               <Button variant='secondary' onClick={handleClose}>
+               <button type='button' className='btn btn-secondary' onClick={handleClose}>
                   Close
-               </Button>
+               </button>
             </Modal.Footer>
          </Modal>
       </div>
@@ -79,6 +93,7 @@ Card.propTypes = {
       login: PropTypes.string.isRequired,
       avatar_url: PropTypes.string.isRequired,
       score: PropTypes.number.isRequired,
+      created_at: PropTypes.string.isRequired,
    }),
 };
 

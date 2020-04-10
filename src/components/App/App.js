@@ -37,6 +37,8 @@ class App extends Component {
          Promise.all(promises).then(([userData]) => {
             this.setState({ users: userData.items, enableBtn: userData.items.length === 12 });
          });
+      } else {
+         this.setState({ page: 1 });
       }
    };
 
@@ -59,7 +61,7 @@ class App extends Component {
          return (
             <p className='text-center'>
                <button className='mt-3 btn btn-outline-secondary' type='button' onClick={this.actionLoadMore}>
-                  LOAD MORE USERS
+                  LOAD MORE
                </button>
             </p>
          );
